@@ -1,0 +1,70 @@
+<div fxLayout="row">
+    <mat-toolbar style="background-color: rgb(235, 235, 235);">
+        <mat-label fxLayoutAlign="start center" fxFlex="1 1 100%">
+            Payment Info List
+        </mat-label>
+    </mat-toolbar>
+    <mat-divider>
+    </mat-divider>
+</div>
+<mat-card *ngFor="let item of paymentInfoList" class="common-list-item" [ngStyle]="{'background-color': selectedItem==item ? 'rgb(224, 224, 241)' : ''}" (click)="selectListItem(item)" style="margin: 5px;">
+    <mat-card-content>
+        <div fxLayout="column">
+
+            <div fxLayout="row wrap" style="padding: 5px;">
+                <div fxLayoput="row" fxFlex="1 1 50%">
+                    <div fxFlex="0 0 100px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Paymant Type</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{item.paymentType}}</mat-label>
+                    </div>
+                </div>
+                <div fxLayout="row" fxFlex="1 1 50%">
+                    <div fxFlex="0 0 100px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Slip No</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{item.slipNo}}</mat-label>
+                    </div>
+                </div>
+            </div>
+            <div fxLayout="row wrap" style="padding: 5px;">
+                <div fxLayoput="row" fxFlex="1 1 50%">
+                    <div fxFlex="0 0 100px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Amount</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{item.amount}}</mat-label>
+                    </div>
+                </div>
+                <div fxLayout="row" fxFlex="1 1 50%">
+                    <div fxFlex="0 0 100px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Date</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{item.dateTime}}</mat-label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </mat-card-content>
+
+</mat-card>
+<mat-card-actions align="end">
+    <button id="close" mat-raised-button color="accent" mat-dialog-close="">Close</button>
+
+</mat-card-actions>

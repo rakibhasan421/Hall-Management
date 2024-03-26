@@ -1,0 +1,105 @@
+<mat-card style="border:solid rgb(224, 217, 217) 2px;">
+    <div [ngClass]="!(isHandset$ | async) ? 'form-padding-popup' : ''">
+        <mat-card-header>
+            <label mat-dialog-title>
+                ADD Payment Information
+            </label>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+
+        <mat-card-content style="margin-top: 20px;">
+
+            <div fxLayout="column" [fxLayoutGap]="(isHandset$ | async) ? '10px' : '20px'">
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Payment Type</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+
+                        <mat-select (selectionChange)="onSelectionChange()" [(ngModel)]="typeInfo" style="padding-right: 25px;">
+                            <mat-option *ngFor="let type of paymentTypeList" [value]="type">
+                                {{ type.title}}
+                            </mat-option>
+                        </mat-select>
+
+                        <!-- <input type="text" [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" id="branchName" matInput placeholder="" [(ngModel)]="paymentInfo.slipNo"> -->
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Slip No</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+
+                        <input type="text" [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" id="branchName" matInput placeholder="" [(ngModel)]="paymentInfo.slipNo">
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Amount</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" id="contactNo" mask="00000-000000" placeholder="" [(ngModel)]="paymentInfo.amount">
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Date</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input mask="0000-00-00" [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" matInput [(ngModel)]="paymentInfo.dateTime">
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <!-- <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Designation</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" matInput [(ngModel)]="hallBodyInfo.hallBodyDesignation">
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div> -->
+
+
+            </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button id="close" mat-raised-button color="accent" mat-dialog-close="">Cancel</button>
+            <button id="save" mat-raised-button color="primary" type="submit" (click)="addPayment()">Save</button>
+        </mat-card-actions>
+    </div>
+</mat-card>

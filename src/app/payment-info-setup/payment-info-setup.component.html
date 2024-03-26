@@ -1,0 +1,257 @@
+<mat-card>
+    <div [ngClass]="!(isHandset$ | async) ? 'form-padding' : ''">
+        <mat-card-content>
+            <div fxLayout="column" [fxLayoutGap]="(isHandset$ | async) ? '10px' : '20px'">
+                <div fxLayout="row">
+                    <div fxFlex="0 0 100px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Roll No</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" id="userId" matInput [(ngModel)]="studentLogin.rollNo">
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row">
+                    <div fxFlex="0 0 100px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Registration No</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" id="UserPassword" matInput type="text" [(ngModel)]="studentLogin.registrationNo">
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row">
+                    <div fxFlex="0 0 100px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label></mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label></mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+
+                        <button id="loginBtn" mat-raised-button class="list-button" (click)="search()">Search</button>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+            </div>
+        </mat-card-content>
+    </div>
+
+</mat-card>
+
+<mat-card style="border:solid rgb(224, 217, 217) 2px;" *ngIf="viewcomponent">
+    <div [ngClass]="!(isHandset$ | async) ? 'form-padding' : ''">
+        <mat-card-header>
+            <label mat-dialog-title>
+                Student Information
+            </label>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+
+        <mat-card-content style="margin-top: 20px;">
+
+            <div fxLayout="column" [fxLayoutGap]="(isHandset$ | async) ? '10px' : '20px'">
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Student Name</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{studentInfo.studentName}}</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Father Name</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{studentInfo.studentFatherName}}</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Mother Name</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{studentInfo.studentMotherName}}</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Student Roll</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{studentInfo.studentRoll}}</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Reg. No</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{studentInfo.studentReg}}</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Contact No </mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{studentInfo.contactNo}}</mat-label>
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Session</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{studentInfo.session}}</mat-label>
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Class</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{studentInfo.lavel}}</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Department</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{studentInfo.department}}</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Address</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{studentInfo.permanentAddress}}</mat-label>
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Residentiality</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{studentInfo.residentiality}}</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                    </div>
+                </div>
+
+                <div fxLayout="row">
+                    <div fxFlex="0 0 100px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label></mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label></mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+
+                        <button id="loginBtn" mat-raised-button class="list-button" (click)="openPaymentInfoAddDialog()">Add Payment</button>
+                    </div>
+                    <div fxFlex="90 1 auto">
+
+                        <button id="loginBtn" mat-raised-button class="list-button" (click)="openPaymentInfoViewDialog()">View Payment</button>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+
+    </div>
+</mat-card>

@@ -1,0 +1,112 @@
+<mat-card style="border:solid rgb(224, 217, 217) 2px;">
+    <div [ngClass]="!(isHandset$ | async) ? 'form-padding-popup' : ''">
+        <mat-card-header>
+            <label mat-dialog-title>
+                Provost Form
+            </label>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+
+        <mat-card-content style="margin-top: 20px;">
+
+            <div fxLayout="column" [fxLayoutGap]="(isHandset$ | async) ? '10px' : '20px'">
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Provost Name</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+
+                        <input type="text" [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" id="branchName" matInput placeholder="" [(ngModel)]="provostInfo.provostName">
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Contact No </mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" id="contactNo" mask="00000-000000" placeholder="01324-567890" [(ngModel)]="provostInfo.contactNo">
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Email</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" matInput [(ngModel)]="provostInfo.provostEmail">
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Department</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" matInput [(ngModel)]="provostInfo.provostDepartment">
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Designation</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" matInput [(ngModel)]="provostInfo.provostDesignation">
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Tenure</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" matInput [(ngModel)]="provostInfo.provostTenune">
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+            </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button id="close" mat-raised-button color="accent" mat-dialog-close="">Cancel</button>
+            <button id="save" mat-raised-button color="primary" type="submit" (click)="addProvost()">Save</button>
+        </mat-card-actions>
+    </div>
+</mat-card>

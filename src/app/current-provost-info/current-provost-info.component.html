@@ -1,0 +1,107 @@
+<mat-card style="border:solid rgb(224, 217, 217) 2px;" *ngIf="viewComponent">
+    <div [ngClass]="!(isHandset$ | async) ? 'form-padding' : ''">
+        <mat-card-header>
+            <mat-card-title style="padding-bottom: 10px;">
+                Current Provost Information
+            </mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+
+        <mat-card-content style="margin-top: 25px;">
+
+            <div fxLayout="column">
+                <div fxLayout="row" style="padding: 5px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Name </mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label> {{provostInfo.provostName}}</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row" style="padding: 5px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Contact No </mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label> {{provostInfo.contactNo}}</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row" style="padding: 5px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Email</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label> {{provostInfo.provostEmail}}</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row" style="padding: 5px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Designation</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label> {{provostInfo.provostDesignation}}</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row" style="padding: 5px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Department</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label> {{provostInfo.provostDepartment}}</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row" style="padding: 5px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Tenune</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label> {{provostInfo.provostTenune}}</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+            </div>
+        </mat-card-content>
+    </div>
+</mat-card>

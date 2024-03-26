@@ -1,0 +1,206 @@
+<mat-card style="border:solid rgb(224, 217, 217) 2px;">
+    <div [ngClass]="!(isHandset$ | async) ? 'form-padding-popup' : ''">
+        <mat-card-header>
+            <label mat-dialog-title>
+                Student Form
+            </label>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+
+        <mat-card-content style="margin-top: 20px;">
+
+            <div fxLayout="column" [fxLayoutGap]="(isHandset$ | async) ? '10px' : '20px'">
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Student Name</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+
+                        <input type="text" [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" id="branchName" matInput placeholder="" [(ngModel)]="studentInfo.studentName">
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Father Name</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input type="text" [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" id="branchName" matInput placeholder="" [(ngModel)]="studentInfo.studentFatherName">
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Mother Name</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input type="text" [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" id="branchName" matInput placeholder="" [(ngModel)]="studentInfo.studentMotherName">
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Student Roll</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" placeholder="" matInput [(ngModel)]="studentInfo.studentRoll" value="" textInput class="form-control" type="text">
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Reg. No</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input type="text" [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" id="branchAddress" matInput placeholder="" [(ngModel)]="studentInfo.studentReg">
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Contact No </mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" id="contactNo" mask="00000-000000" placeholder="" [(ngModel)]="studentInfo.contactNo">
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Email </mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" id="contactNo" mask="00000-000000" placeholder="" [(ngModel)]="studentInfo.studentEmail">
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Session</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" id="branchFaxNumber" placeholder="" matInput [(ngModel)]="studentInfo.session">
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Class</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" matInput [(ngModel)]="studentInfo.lavel">
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Department</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+
+                        <mat-select (selectionChange)="onDepartmentSelectionChange()" [(ngModel)]="departmentInfo" style="padding-right: 25px;">
+                            <mat-option *ngFor="let department of departmentList" [value]="department">
+                                {{ department.departmentTitle}}
+                            </mat-option>
+                        </mat-select>
+                        <!-- <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" matInput [(ngModel)]="studentInfo.department"> -->
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Address</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" matInput [(ngModel)]="studentInfo.permanentAddress">
+
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+
+                    </div>
+                </div>
+                <div fxLayout="row" style="padding: 2px;">
+                    <div fxFlex="0 0 140px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Residentiality</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <input [ngClass]="!(isHandset$ | async) ? 'input-small' : 'input-large'" matInput [(ngModel)]="studentInfo.residentiality">
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button id="close" mat-raised-button color="accent" mat-dialog-close="">Cancel</button>
+            <button id="save" mat-raised-button color="primary" type="submit" (click)="addStudent()">Save</button>
+        </mat-card-actions>
+    </div>
+</mat-card>

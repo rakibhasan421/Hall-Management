@@ -1,0 +1,100 @@
+<div fxLayout="row">
+    <mat-toolbar style="background-color: rgb(235, 235, 235);">
+        <mat-label fxLayoutAlign="start center" fxFlex="1 1 100%">
+            House Tutor List
+        </mat-label>
+        <div fxLayoutAlign="end center" style="margin-right: 40px;">
+            <button id="addBranchBtn" mat-raised-button color="primary" (click)="openHouseTutorInfoDialog()">ADD</button>
+        </div>
+    </mat-toolbar>
+    <mat-divider>
+    </mat-divider>
+</div>
+
+<mat-card *ngFor="let item of houseTutorList" class="common-list-item" [ngStyle]="{'background-color': selectedItem==item ? 'rgb(224, 224, 241)' : ''}" (click)="selectListItem(item)" style="margin: 5px;">
+    <mat-card-content>
+        <div fxLayout="column">
+            <div fxLayout="row wrap" style="padding: 5px;">
+                <div fxLayout="row" fxFlex="1 1 42%">
+                    <div fxFlex="0 0 100px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Name</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{item.tutorName}}</mat-label>
+                    </div>
+                </div>
+                <div fxLayout="row" fxFlex="1 1 42%">
+                    <div fxFlex="0 0 100px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Contact No</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{item.contactNo}}</mat-label>
+                    </div>
+                </div>
+            </div>
+
+            <div fxLayout="row wrap" style="padding: 5px;">
+                <div fxLayout="row" fxFlex="1 1 42%">
+                    <div fxFlex="0 0 100px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Email</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{item.tutorEmail}}</mat-label>
+                    </div>
+                </div>
+                <div fxLayout="row" fxFlex="1 1 42%">
+                    <div fxFlex="0 0 100px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Designation</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{item.tutorDesignation}}</mat-label>
+                    </div>
+                </div>
+            </div>
+
+            <div fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 5px;">
+                <div fxLayout="row" fxFlex="1 1 42%">
+                    <div fxFlex="0 0 100px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Department</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{item.tutorDepartment}}</mat-label>
+                    </div>
+                </div>
+                <div fxLayout="row" fxFlex="1 1 42%">
+                    <div fxFlex="0 0 100px" fxLayout="column" fxLayoutAlign="center end">
+                        <mat-label>Tenure</mat-label>
+                    </div>
+                    <div fxFlex="0 0 40px" fxLayout="column" fxLayoutAlign="center center">
+                        <mat-label>:</mat-label>
+                    </div>
+                    <div fxFlex="90 1 auto">
+                        <mat-label>{{item.tutorTenune}}</mat-label>
+                    </div>
+                </div>
+                <div fxLayout="row" fxFlex="1 1 auto">
+                    <button mat-raised-button class="list-button" (click)="openHouseTutorInfoDialog(item)">
+                        Edit
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+    </mat-card-content>
+</mat-card>
